@@ -7,6 +7,7 @@ import { Suspense } from 'react'
 import Posts from './Posts'
 
 import TaskCounter from './TaskCounter'
+import TaskUsers from './TasksUsers'
 
 // const fetchUsers = fetch('https://jsonplaceholder.typicode.com/users')
 // .then(res => res.json())
@@ -21,9 +22,19 @@ import TaskCounter from './TaskCounter'
 //   return res.json();
 // }
 
+//for task
+const fetchTaskUsers = fetch('https://jsonplaceholder.typicode.com/users')
+.then(res => res.json())
+
+// const fetchTaskUsers2 = async() =>{
+//   const res = await fetch ('https://jsonplaceholder.typicode.com/users');
+//   return res.json();
+// }
+
 function App() {
   // const friendsPromise = fetchFriends();
   // const postsPromise = fetchPosts();
+  // const fetchTaskUsers = fetchTaskUsers2();
 
 
   function handleClick(){
@@ -45,9 +56,15 @@ function App() {
       <h1>Vite + React</h1>
 
 
-      
+
       {/* this is task */}
       {/* <TaskCounter></TaskCounter> */}
+
+      <Suspense fallback = {<h3>Loading User Info...</h3>}>
+          <TaskUsers fetchTaskUsers = {fetchTaskUsers}></TaskUsers>
+      </Suspense>
+
+      
 
       
       {/* <Suspense fallback={<h4>Posts are comming...</h4>}>

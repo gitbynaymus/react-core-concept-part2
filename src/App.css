@@ -46,7 +46,15 @@
   margin: 10px;
   padding: 10px;
   border-radius: 20px;
+  background: #3e1616;
 }
 .btn{
   margin: 5px;
+}
+.card2{
+  border: 1px solid tomato;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  background: #000;
 }
